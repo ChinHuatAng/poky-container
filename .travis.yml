@@ -1,46 +1,24 @@
-# The language is set to python to ensure virtualenv and python exist for the
-# tests.
 language: python
-
 sudo: required
 services:
-  - docker
-
+- docker
 env:
   matrix:
-    - BASE_DISTRO=centos-7
-    - BASE_DISTRO=debian-8
-    - BASE_DISTRO=debian-9
-    - BASE_DISTRO=fedora-24
-    - BASE_DISTRO=fedora-25
-    - BASE_DISTRO=fedora-26
-    - BASE_DISTRO=fedora-27
-    - BASE_DISTRO=opensuse-42.2
-    - BASE_DISTRO=ubuntu-14.04
-    - BASE_DISTRO=ubuntu-16.04
-    - BASE_DISTRO=ubuntu-17.04
-    - BASE_DISTRO=ubuntu-17.10
-
+  - BASE_DISTRO=ubuntu-16.04
   global:
-    - REPO=crops/poky
-    - DEFAULT_DISTRO=ubuntu-16.04
-    - secure: "Elbh4m0BAIUiYaF5dukzGPppQVipTKI3ZshUWhOgGYzmLC/OBw9MzHD/rSiil+cJk2LhDvqQNvtWVbrVIVOCf/uM9G5j2lvIuATiVgndQG7ne/xTIpFr3PRVXfL4tCXJOP10HCGceHjY78uK2aZuqwolIMM4ITx8hvWwIzE9fx6RBwVxPCVWm3FN5r4M3PNCkin6s+PGFSUNSXBEBNytHuhULODdGhMD5KUMC0M5kUz2NCGHICBrKdqq/uNOLVhkayVE1LgOBWHx9oDDX20romJS7tuaKc2CWS3Qaxf7lJMgCCzGqHdF+hhK7DR4fZefKtuyW+InEiB4FrKfPFM43iz72P9moRaoZZJ3w5LZjHBinKiB5m8Nfe3MHfxF1s25+6ToRkgnGi+0swEM2gkifdmW78urFz8TqQ8eQ9jHa5xjVBC/splVqKqlAhOmHiqNc0pffCs/poyCge9IEAKu4Sm+EpknAWPsawnph3Q0UW1n8x8E7XXWdAzAD4CCGdxCe1fyrw3RcywqWMlNm5/7QjBeeNdYzS7BOcyj8l31B0KMADFI6scpMhMTY7n56/7bJovCFq2zqpos/YmaufHSj07CvUNL/u2e9wNbrxiDKh5EFgaPqvZYt/uEtSTdvAk7uShvVzhf4sk+GzR3AWdja4IZMNCqzJ9yxFk7MZRfO6E="
-    - secure: "n/0cc9tfQ8U86bTL4wdKhlqgk3DEeD9z7a6ViyDMEztsuNwX8+ziCusnO1LPFpiEe9ktO6gJPf9c9ejr6sWIT4xs05Xtgym0mnz0VqS71l8L/xUnWDcMVzyKpZsGfAOadYKcz9JIiPV63ssJGxlUpGB/NICgLGuj9aYuBzS5Ob7eILtFwVkGqK6lZ038fYaO+1Tphc53QWipY/z60XbB+0zR9NHts6dYlpHyknfPoigUHC9nWgafZnLVO7C4+pFrotHzAXfMqj3ZRyTRTgqxMX91j2Xnsi6V+qIk/oAJWF/ODTQKaJDekgjrUd6nn/WxImMTXoSaVaUtzXq/s50ebvK1iD7IDpvCZRux6D2mdwKFFwQxMcac0NcbG9M5vs9Q5MoSuNieNr8DaDDgICOCRVmnm5BW2+RGtfY0UpQtKXy5ST0QwMmHV9vX/qBd9haK0JjzJkBJPOLNkvSdIJMT7la+jTuX2K8DQhlPVxhWMBJ43oXA38OGq3lD+Y/zGYVyA3usm16eaUtgoPjk9gDs5f1NB65zTK87fpink902kov3WHrRQ8fJ1ikU6PUjC2iBxjxI4KOSmRALmLuXJ/NQnXjqhnztGahuvnI3E945BCB9cmnyyibYFRM5LjDAzD78Ii2qo1oWzvlRNk4PwgR9810BFI6vuHb5jo/3FG9Fcuw="
-
+  - REPO=crops/poky
+  - DEFAULT_DISTRO=ubuntu-16.04
+  - secure: ZC2W3bP9BUnhzBLGeEuBUICj/Zk158p2P6eWuFjENyDuQBwk1CflNQas5oUP24DVwLAVuKRQcpKKGbP6A9DnIIIcRa8Oe2vev7ZbNnuPNOs1pd3PEDADxOeW+EDaNvun6WROtkYq80fNxXKRKtYoiqzpb/3z/bhfPb4+q9m8cqNeZRXuNAJXhE5eaLkfArFla1z2A9jDQneCrA6XHweKA/rkzFDYP3HYJmCgHyRUfYGXB/Gd7wuFth65LX6SAYgbYx8XORjJOzV8Vxlq9N4GbU/vtu545cSYiFZHMahxxb+ixgXchK17mBBX+x5qQCNj/fL/aB93y5bOt4I6aTiwpUnhfIG3vBjTILQG/X8B+OXBJ/e55h6aLRURTZMXZrfT8iEC8/GRDWKSzfPVvbPu0Y3xGMhkUm2j7Wbu8GwDWGncCnCNRKJphVlolm6PFVCMiHactE5sqVz2TKzLXdUqSjMdH1xTadD0Mceob+D8UJArlqCkMfAJ20r/gVVcUB4uapzUGPzG37pySAOzpEM4GZYtD4NV3erl9EbBDot8u1Ruxn+GgDBu2+1ga6rfH4KUy3leFRrLHGcyEReUyNseOlPBQMGJDmTZyu1gYLKajVJ0qOdORrkGhLL4lwtKJx7OgmurFJ7zgWa1BDd4bZv2QVGO1T3jINwxYJe7U5D2rB0=
+  - secure: BJbOWwGqHxZMBLzS+e3XMek2yAYNiwrjH3VI04jUqtS9VFpMyMrwXn9E5ww4DN9UzxJ8ZHEivVbmtHmIZMguXH/2uXM+uEklKX7S+mgo+E/K84JDe1Cl3pcsZFJh8t49Fwxd7mXLLzSEO5Lw4G/dv93imN6ob9YL5pdG6T2sHFQWGEXpedBX//0M9oQXRMkRWGTRySlXynQ+UjsSD5X3r13qGEIMrCY4yN813zJyCdsD9BT+KPToZR7HNrM66WzBKtcfjSF9U9dA/BASqadnlYO9KmOR3rjHBw4ZmJFJeK6eG8PzHblv6brsiR/fGKIfLQp8iTT91OEsimGXmqrBUZ2+nK88TnfGpp8Gpzb+yMcU6Be7cenGXnY915UlJzMerMI3Y6dH/d+8AHhLMyR/21HlIU5BimLX01zukVQjc2ZJ3tR+Mh4YFXOJ4++59uVNCPiVaMEZDIk5VCdJTDJJzAV06a0HBY2B2i4Jl+sxeNZhcu3FLDQCmvQPNQ7ipf6/aWfbpjvAjBn8kpiDaCMie/LXXfLS/qpHxQmKgBkBNaX8MIJ4a/1TC5SSJ19eXNF2Qzjljoq7/0mD9uc2FZjfzQbt1Dqfs/LRSL2ZMUnH13stHwU92c60N/RNe17y+wHheU4WBZyeY7sSF9GckVb9WwNwmh+V2G74tA9ioj+YuxE=
 before_install:
-  # For annotate-output
-  - sudo apt-get install -y devscripts
-
+- sudo apt-get install -y devscripts
 script:
-  - ./build-and-test.sh
-
+- "./build-and-test.sh"
 after_success:
-  - bash deploy.sh
-
+- bash deploy.sh
 notifications:
   email:
     recipients:
-      - brian.avery@intel.com
-      - randy.e.witt@intel.com
+    - chin.huat.ang@intel.com
     on_success: change
     on_failure: always
