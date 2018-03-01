@@ -21,6 +21,7 @@ ADD https://raw.githubusercontent.com/crops/extsdk-container/master/restrict_use
         https://raw.githubusercontent.com/crops/extsdk-container/master/restrict_groupadd.sh \
         https://raw.githubusercontent.com/crops/extsdk-container/master/usersetup.py \
         /usr/bin/
+ADD https://autobuilder.yocto.io/pub/releases/yocto-2.5_M2.rc1/toolchain/x86_64/poky-glibc-x86_64-core-image-sato-i586-toolchain-2.4%2Bsnapshot.sh /opt
 COPY poky-entry.py poky-launch.sh /usr/bin/
 COPY sudoers.usersetup /etc/
 
@@ -35,7 +36,8 @@ RUN userdel -r yoctouser && \
         /usr/bin/poky-launch.sh \
         /usr/bin/restrict_groupadd.sh \
         /usr/bin/restrict_useradd.sh && \
-    echo "#include /etc/sudoers.usersetup" >> /etc/sudoers
+    echo "#include /etc/sudoers.usersetup" >> /etc/sudoers && \
+    sh /opt/poky-glibc-x86_64-core-image-sato-i586-toolchain-2.4+snapshot.sh -y
 
 USER usersetup
 ENV LANG=en_US.UTF-8
