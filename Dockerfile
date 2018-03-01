@@ -39,7 +39,9 @@ RUN userdel -r yoctouser && \
     echo "#include /etc/sudoers.usersetup" >> /etc/sudoers && \
     chmod a+x /opt/poky-glibc-x86_64-core-image-sato-i586-toolchain-2.4+snapshot.sh && \
     sync && \
-    /opt/poky-glibc-x86_64-core-image-sato-i586-toolchain-2.4+snapshot.sh -y
+    /opt/poky-glibc-x86_64-core-image-sato-i586-toolchain-2.4+snapshot.sh -y && \
+    rm /opt/poky-glibc-x86_64-core-image-sato-i586-toolchain-2.4+snapshot.sh
+
 
 USER usersetup
 ENV LANG=en_US.UTF-8
