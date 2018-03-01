@@ -15,6 +15,9 @@
 workdir=$1
 shift
 cd $workdir
+ES=$(find /opt/poky/*/environment-setup-* -type f| head -1)
+echo "sourcing $ES"
+. $ES
 if [ $# -gt 0 ]; then
     exec bash -c "$*"
 else
