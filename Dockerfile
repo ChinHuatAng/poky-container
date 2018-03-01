@@ -37,7 +37,9 @@ RUN userdel -r yoctouser && \
         /usr/bin/restrict_groupadd.sh \
         /usr/bin/restrict_useradd.sh && \
     echo "#include /etc/sudoers.usersetup" >> /etc/sudoers && \
-    sh /opt/poky-glibc-x86_64-core-image-sato-i586-toolchain-2.4+snapshot.sh -y
+    chmod a+x /opt/poky-glibc-x86_64-core-image-sato-i586-toolchain-2.4+snapshot.sh && \
+    sync && \
+    /opt/poky-glibc-x86_64-core-image-sato-i586-toolchain-2.4+snapshot.sh -y
 
 USER usersetup
 ENV LANG=en_US.UTF-8
