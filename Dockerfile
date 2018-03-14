@@ -40,7 +40,7 @@ RUN userdel -r yoctouser && \
         /usr/bin/restrict_groupadd.sh \
         /usr/bin/restrict_useradd.sh && \
     echo "#include /etc/sudoers.usersetup" >> /etc/sudoers && \
-    chmod a+x ${SDK_INSTALLER} && \
+    chmod a+x /opt/${SDK_INSTALLER} && \
     sync && \
     /opt/${SDK_INSTALLER} -y && \
     rm /opt/${SDK_INSTALLER}
