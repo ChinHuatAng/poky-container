@@ -19,7 +19,7 @@ set -e
 DOCKERFILE=`mktemp -p . Dockerfile.XXX`
 
 sed -e "s#FROM crops/yocto:ubuntu-14.04#FROM crops/yocto:${BASE_DISTRO}#" Dockerfile > $DOCKERFILE
-docker build --pull -f $DOCKERFILE -t ${REPO}:${BASE_DISTRO} .
+docker build --pull -f $DOCKERFILE -t ${REPO}:${SDK_VERSION}-${BASE_DISTRO} --build-arg SDK_INSTALLER_URL_ARG=${SDK_INSTALLER_URL_ARG} --build-arg SDK_INSTALLER_ARG=${SDK_INSTALLER_ARG} .
 
 if command -v annotate-output; then
     ANNOTATE_OUTPUT=annotate-output

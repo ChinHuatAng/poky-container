@@ -15,13 +15,16 @@
 
 FROM crops/yocto:ubuntu-14.04-base
 
+ARG SDK_INSTALLER_URL_ARG
+ARG SDK_INSTALLER_ARG
+ENV SDK_INSTALLER=$SDK_INSTALLER_ARG
 USER root
 
 ADD https://raw.githubusercontent.com/crops/extsdk-container/master/restrict_useradd.sh  \
         https://raw.githubusercontent.com/crops/extsdk-container/master/restrict_groupadd.sh \
         https://raw.githubusercontent.com/crops/extsdk-container/master/usersetup.py \
         /usr/bin/
-ADD https://autobuilder.yocto.io/pub/releases/yocto-2.5_M2.rc1/toolchain/x86_64/poky-glibc-x86_64-core-image-sato-i586-toolchain-2.4%2Bsnapshot.sh /opt
+ADD $SDK_INSTALLER_URL_ARG /opt
 COPY poky-entry.py poky-launch.sh /usr/bin/
 COPY sudoers.usersetup /etc/
 
@@ -37,10 +40,10 @@ RUN userdel -r yoctouser && \
         /usr/bin/restrict_groupadd.sh \
         /usr/bin/restrict_useradd.sh && \
     echo "#include /etc/sudoers.usersetup" >> /etc/sudoers && \
-    chmod a+x /opt/poky-glibc-x86_64-core-image-sato-i586-toolchain-2.4+snapshot.sh && \
+    chmod a+x ${SDK_INSTALLER} && \
     sync && \
-    /opt/poky-glibc-x86_64-core-image-sato-i586-toolchain-2.4+snapshot.sh -y && \
-    rm /opt/poky-glibc-x86_64-core-image-sato-i586-toolchain-2.4+snapshot.sh
+    /opt/${SDK_INSTALLER} -y && \
+    rm /opt/${SDK_INSTALLER}
 
 
 USER usersetup
