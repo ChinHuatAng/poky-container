@@ -24,6 +24,6 @@ docker build --pull -f $DOCKERFILE -t ${REPO}:${SDK_VERSION/+/.}-${BASE_DISTRO} 
 if command -v annotate-output; then
     ANNOTATE_OUTPUT=annotate-output
 fi
-$ANNOTATE_OUTPUT bash -c "cd tests; ./runtests.sh ${REPO}:${BASE_DISTRO}"
+$ANNOTATE_OUTPUT bash -c "cd tests; ./runtests.sh ${REPO}:${SDK_VERSION/+/.}-${BASE_DISTRO}"
 
 rm -f $DOCKERFILE
