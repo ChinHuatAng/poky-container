@@ -43,7 +43,9 @@ RUN userdel -r yoctouser && \
     chmod a+x /opt/${SDK_INSTALLER} && \
     sync && \
     /opt/${SDK_INSTALLER} -y && \
-    rm /opt/${SDK_INSTALLER}
+    rm /opt/${SDK_INSTALLER} && \
+    apt-get install rpcbind && \
+    echo 'OPTIONS="-i -w"' > /etc/default/rpcbind
 
 
 USER usersetup
