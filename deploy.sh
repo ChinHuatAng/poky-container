@@ -20,7 +20,7 @@ set -e
 
 # Don't deploy on pull requests because it could just be junk code that won't
 # get merged
-if [ "${TRAVIS_PULL_REQUEST}" = "false" -a "${TRAVIS_BRANCH}" = "master" ]; then
+if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
 
     if [ "${DEFAULT_DISTRO}" = "${BASE_DISTRO}" ]; then
         docker tag ${REPO}:${SDK_VERSION}-${BASE_DISTRO} ${REPO}:latest
