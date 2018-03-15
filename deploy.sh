@@ -23,7 +23,7 @@ set -e
 if [ "${TRAVIS_PULL_REQUEST}" = "false" -a "${TRAVIS_BRANCH}" = "master" ]; then
 
     if [ "${DEFAULT_DISTRO}" = "${BASE_DISTRO}" ]; then
-        docker tag ${REPO}:${SDK_VERSION/+/.}-${BASE_DISTRO} ${REPO}:latest
+        docker tag ${REPO}:${SDK_VERSION}-${BASE_DISTRO} ${REPO}:latest
     fi
     docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
     docker push ${REPO}
