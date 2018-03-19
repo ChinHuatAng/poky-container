@@ -44,7 +44,7 @@ RUN userdel -r yoctouser && \
     sync && \
     /opt/${SDK_INSTALLER} -y && \
     rm /opt/${SDK_INSTALLER} && \
-    apt-get -y install rpcbind net-tools && \
+    apt-get -y install rpcbind net-tools dnsutils && \
     echo 'OPTIONS="-i -w"' > /etc/default/rpcbind
 
 
