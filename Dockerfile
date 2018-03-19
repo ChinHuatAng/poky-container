@@ -48,7 +48,7 @@ RUN userdel -r yoctouser && \
     echo 'OPTIONS="-i -w"' > /etc/default/rpcbind
 
 
-USER usersetup
+USER root 
 ENV LANG=en_US.UTF-8
 
 ENTRYPOINT ["/usr/bin/dumb-init", "--", "/usr/bin/poky-entry.py"]
