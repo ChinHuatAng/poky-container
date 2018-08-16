@@ -8,9 +8,9 @@ env:
   global:
   - REPO=chinhuatang/yocto-sdk
   - DEFAULT_DISTRO=ubuntu-16.04
-  - SDK_VERSION=2.5_M3.rc1
-  - SDK_INSTALLER_URL_ARG=https://autobuilder.yocto.io/pub/releases/yocto-2.5_M3.rc1/toolchain/x86_64/poky-glibc-x86_64-core-image-sato-i586-toolchain-2.4%2Bsnapshot.sh
-  - SDK_INSTALLER_ARG=poky-glibc-x86_64-core-image-sato-i586-toolchain-2.4+snapshot.sh
+  - SDK_VERSION=2.6_M2
+  - SDK_INSTALLER_URL_ARG=https://downloads.yoctoproject.org/releases/yocto/milestones/yocto-2.6_M2/toolchain/x86_64/poky-glibc-x86_64-core-image-sato-i586-toolchain-2.5%2Bsnapshot.sh
+  - SDK_INSTALLER_ARG=poky-glibc-x86_64-core-image-sato-i586-toolchain-2.5+snapshot.sh
   - secure: ZC2W3bP9BUnhzBLGeEuBUICj/Zk158p2P6eWuFjENyDuQBwk1CflNQas5oUP24DVwLAVuKRQcpKKGbP6A9DnIIIcRa8Oe2vev7ZbNnuPNOs1pd3PEDADxOeW+EDaNvun6WROtkYq80fNxXKRKtYoiqzpb/3z/bhfPb4+q9m8cqNeZRXuNAJXhE5eaLkfArFla1z2A9jDQneCrA6XHweKA/rkzFDYP3HYJmCgHyRUfYGXB/Gd7wuFth65LX6SAYgbYx8XORjJOzV8Vxlq9N4GbU/vtu545cSYiFZHMahxxb+ixgXchK17mBBX+x5qQCNj/fL/aB93y5bOt4I6aTiwpUnhfIG3vBjTILQG/X8B+OXBJ/e55h6aLRURTZMXZrfT8iEC8/GRDWKSzfPVvbPu0Y3xGMhkUm2j7Wbu8GwDWGncCnCNRKJphVlolm6PFVCMiHactE5sqVz2TKzLXdUqSjMdH1xTadD0Mceob+D8UJArlqCkMfAJ20r/gVVcUB4uapzUGPzG37pySAOzpEM4GZYtD4NV3erl9EbBDot8u1Ruxn+GgDBu2+1ga6rfH4KUy3leFRrLHGcyEReUyNseOlPBQMGJDmTZyu1gYLKajVJ0qOdORrkGhLL4lwtKJx7OgmurFJ7zgWa1BDd4bZv2QVGO1T3jINwxYJe7U5D2rB0=
   - secure: BJbOWwGqHxZMBLzS+e3XMek2yAYNiwrjH3VI04jUqtS9VFpMyMrwXn9E5ww4DN9UzxJ8ZHEivVbmtHmIZMguXH/2uXM+uEklKX7S+mgo+E/K84JDe1Cl3pcsZFJh8t49Fwxd7mXLLzSEO5Lw4G/dv93imN6ob9YL5pdG6T2sHFQWGEXpedBX//0M9oQXRMkRWGTRySlXynQ+UjsSD5X3r13qGEIMrCY4yN813zJyCdsD9BT+KPToZR7HNrM66WzBKtcfjSF9U9dA/BASqadnlYO9KmOR3rjHBw4ZmJFJeK6eG8PzHblv6brsiR/fGKIfLQp8iTT91OEsimGXmqrBUZ2+nK88TnfGpp8Gpzb+yMcU6Be7cenGXnY915UlJzMerMI3Y6dH/d+8AHhLMyR/21HlIU5BimLX01zukVQjc2ZJ3tR+Mh4YFXOJ4++59uVNCPiVaMEZDIk5VCdJTDJJzAV06a0HBY2B2i4Jl+sxeNZhcu3FLDQCmvQPNQ7ipf6/aWfbpjvAjBn8kpiDaCMie/LXXfLS/qpHxQmKgBkBNaX8MIJ4a/1TC5SSJ19eXNF2Qzjljoq7/0mD9uc2FZjfzQbt1Dqfs/LRSL2ZMUnH13stHwU92c60N/RNe17y+wHheU4WBZyeY7sSF9GckVb9WwNwmh+V2G74tA9ioj+YuxE=
 before_install:
